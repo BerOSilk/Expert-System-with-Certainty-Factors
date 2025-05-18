@@ -1,0 +1,12 @@
+# Rule Definition Guidelines
+# Each rule must follow the format: {evidence} THEN {hypothesis} \cf {cf value}
+# If a rule contains multiple pieces of evidence, they must be connected using only the logical operators AND or OR. Do not use any other connectors.
+# Both the evidence and the hypothesis should be written in the format: {subject} is {state} (e.g., {today} is {rain}). The content within the curly braces {} is variable and should be customized accordingly.
+# Any line that begins with # or is left blank will be ignored during processing.
+
+today is rain then tomorrow is rain \cf 0.5
+today is dry then tomorrow is dry \cf 0.5
+today is rain AND rainfall is low then tomorrow is dry \cf 0.6
+today is rain AND rainfall is low AND temperature is cold then tomorrow is dry \cf 0.7
+today is dry AND temperature is warm then tomorrow is rain \cf 0.65
+today is dry AND temperature is warm AND sky is overcast then tomorrow is rain \cf 0.55
